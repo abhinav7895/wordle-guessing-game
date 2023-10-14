@@ -1,6 +1,6 @@
 // Open How To Play Container 
 const openWordle = () => {
-    window.location.href = './"./src/html/wordle.html"';
+    window.location.href = './src/html/wordle.html"';
 };
 
 const howToPlayContainer = document.querySelector('[data-play-container]');
