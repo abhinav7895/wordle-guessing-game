@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>Wordle</title>
+  </head>
+  <body data-theme="light">
+    <main>
+      <div class="theme">
+        <img
+          class="theme-icon"
+          data-select-theme="dark"
+          src="./assets/dark_mode_FILL0_wght400_GRAD0_opsz24.svg"
+          alt=""
+        />
+        <img
+          class="theme-icon"
+          data-select-theme="light"
+          src="./assets/light_mode_FILL0_wght400_GRAD0_opsz24.svg"
+          alt=""
+        />
+      </div>
+      <div class="header">
+        <div class="wordle-box">
+          <div class="tile dance-tiles"></div>
+          <div class="tile dance-tiles"></div>
+          <div class="tile dance-tiles"></div>
+          <div class="tile dance-tiles"></div>
+          <div class="tile dance-tiles"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="header-text">
+          <h1 class="title">Wordle</h1>
+          <h4 class="description">
+            Unscramble the mystery in just 6 attempts to discover the hidden
+            5-letter word! 🤔🔠
+          </h4>
+        </div>
+        <div class="wordle-buttons">
+          <button onclick="openWordle()" class="btn play-button">Play</button>
+          <button data-play-btn class="btn rules-button">How to Play</button>
+        </div>
+      </div>
+
+      <!-- How to play  -->
+      <div data-play-container class="how-to-play-section">
+        <button data-cut-btn class="cut-button"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+        <div class="how-to-play-description">
+          <h2>How To Play</h2>
+          <p>Guess the Wordle in 6 tries.</p>
+          <ul>
+            <li>Each guess must be a valid 5-letter word.</li>
+            <li>
+              The color of the tiles will change to show how close your guess
+              was to the word.
+            </li>
+          </ul>
+        </div>
+        <div class="examples">
+          <h4>Examples</h4>
+          <div class="example correct-spot">
+            <div class="tiles">
+              <div class="tile flip correct">A</div>
+              <div class="tile">P</div>
+              <div class="tile">P</div>
+              <div class="tile">L</div>
+              <div class="tile">E</div>
+            </div>
+            <p><strong>A</strong> is in the word and in the correct spot.</p>
+          </div>
+          <div class="example wrong-spot">
+            <div class="tiles">
+              <div class="tile">A</div>
+              <div class="tile wrong-location flip">P</div>
+              <div class="tile">P</div>
+              <div class="tile">L</div>
+              <div class="tile">E</div>
+            </div>
+            <p><strong>P</strong> is in the word but in the wrong spot.</p>
+          </div>
+          <div class="example not-in-word">
+            <div class="tiles">
+              <div class="tile">A</div>
+              <div class="tile">P</div>
+              <div class="tile">P</div>
+              <div class="tile flip wrong">L</div>
+              <div class="tile">E</div>
+            </div>
+            <p><strong>L</strong> is not in the word in any spot.</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <p class="about">
+        Create by
+        <a href="https://abhinavyadav.bio.link/" target="_blank">me</a>, with ❤️
+      </p>
+    </footer>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/theme.js"></script>
+  </body>
+</html>
