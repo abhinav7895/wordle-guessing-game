@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,500&family=Roboto+Slab:wght@300&family=Young+Serif&display=swap");
+
 
 *,
 *::after,
@@ -11,6 +12,7 @@
 
 
 :root, [data-theme="light"] {
+  --font-poppins: "Poppins", sans-serif;
   --text-clr: rgb(10, 10, 10);
   --bg-clr: hsl(240, 7%, 89%);
   --bg-btn-clr: rgba(255, 255, 255, 0.034);
@@ -26,6 +28,7 @@
 }
 
 [data-theme="dark"] {
+  --font-poppins: "Poppins", sans-serif;
   --text-clr: white;
   --bg-clr: hsl(240, 90%, 4%);
   --bg-btn-clr: rgba(255, 255, 255, 0.034);
@@ -45,19 +48,28 @@
 body {
   background-color: var(--bg-clr);
   display: flex;
+  max-width: 1080px;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin-inline: auto;
   padding: 0.4rem;
   gap: 1rem;
+  position: relative;
 }
+
 
 .theme {
   position: absolute;
-  right: 2rem;
-  top: 1.2rem;
+  right: 1rem;
+  top: 1rem;
+  border: 1px solid rgb(168, 132, 13);
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  place-items: center;
+  cursor: pointer;
 }
 .theme > [data-select-theme='dark'] {
   display: none;
@@ -349,4 +361,30 @@ body {
   .tile {
     font-size: 1.5rem;
   }
+}
+
+
+footer {
+  position: absolute;
+  bottom: 10px;
+}
+
+.about {
+  color: var(--text-clr);
+  font-family: var(--font-poppins);
+  font-size: 1.3rem;
+}
+
+.about > a {
+  font-family: inherit;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  color: inherit;
+  text-decoration-color: var(--text-clr);
+}
+.about > a:hover {
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
 }
